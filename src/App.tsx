@@ -3,9 +3,10 @@ import './App.css';
 import {ProductCard} from "./components/ProductCard/ProductCard";
 import {ProductList} from './components/ProductCard/ProductList';
 import {CardForProdacts} from './components/CardForProdacts/CardForProdacts';
+import {v1} from 'uuid';
 
 export type ProductsType={
-    id: number
+    id: string
     src: string
     title: string
     description: string
@@ -16,7 +17,7 @@ export type ProductsType={
 function App() {
     const [products, setProducts] = useState<ProductsType[]>([
         {
-            id: 1,
+            id: v1(),
             src: 'https://remont.lvivservice.com.ua/upload/iblock/f92/X-min.png',
             title: 'iPhone X',
             description: 'A 5.5" beast of processing power from Apple',
@@ -24,7 +25,7 @@ function App() {
             category: 'Iphone'
         },
         {
-            id: 2,
+            id: v1(),
             src: 'https://s.pn.com.ua/i/md/1232/4415517/4415517_00p.jpg',
             title: 'Samsung S9',
             description: 'The most powerful Android device on the planet',
@@ -32,7 +33,7 @@ function App() {
             category: 'Samsung'
         },
         {
-            id: 3,
+            id: v1(),
             src: 'https://c.ua/image/cache/catalog/VladimirGorchakov/GooglePixel7Pro/whi/1-800x800.jpg',
             title: 'Pixel 2',
             description: 'The perfect phone for a clean Android experience',
@@ -40,7 +41,7 @@ function App() {
             category: 'Pixel'
         },
         {
-            id: 4,
+            id: v1(),
             src: 'https://img.ktc.ua/img/base/1/1/204111.jpg',
             title: 'Oneplus 6',
             description: 'The latest from a long line of affordable premium devices by Oneplus',
@@ -48,7 +49,7 @@ function App() {
             category: 'Oneplus'
         },
         {
-            id: 5,
+            id: v1(),
             src: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/a/p/apple_iphone_8_plus_red_11_1.jpg',
             title: 'iPhone 8',
             description: 'The little, less-stylish brother of the iPhone X.',
@@ -56,7 +57,7 @@ function App() {
             category: 'Iphone'
         },
         {
-            id: 6,
+            id: v1(),
             src: 'https://vedroid.com/img/smartphones/xiaomi-redmi-note-10-pro-(china)/01.jpg',
             title: 'Redmi Note 10 PRO',
             description: 'The latest and most powerful smartphone from LG.',
@@ -65,7 +66,7 @@ function App() {
 
         },
         {
-            id: 7,
+            id: v1(),
             src: 'https://c.ua/image/cache/catalog/VladimirGorchakov/GooglePixel7Pro/whi/1-800x800.jpg',
             title: 'Pixel 2',
             description: 'The perfect phone for a clean Android experience',
@@ -73,7 +74,7 @@ function App() {
             category: 'Pixel'
         },
         {
-            id: 8,
+            id: v1(),
             src: 'https://i.allo.ua/media/catalog/product/cache/3/image/468x468/602f0fa2c1f0d1ba5e241f914e856ff9/h/u/huawei_mate_10_pro-bl_result_2.jpg',
             title: 'Huawei Mate 10 Pro',
             description: 'The most powerful Android device yet from Huawei',
@@ -81,7 +82,7 @@ function App() {
             category: 'Huawei'
         },
         {
-            id: 9,
+            id: v1(),
             src: 'https://img.ktc.ua/img/base/1/1/204111.jpg',
             title: 'Oneplus 6',
             description: 'The latest from a long line of affordable premium devices by Oneplus',
