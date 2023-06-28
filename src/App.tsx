@@ -102,7 +102,7 @@ function App() {
     }
 
      const addToCart=(prodact:ProductsType)=>{
-        let cartProdact={
+        let cartProdact:ProductsType={
             id:prodact.id,
             src:prodact.src,
             title:prodact.title,
@@ -110,9 +110,18 @@ function App() {
             price:prodact.price,
             category:prodact.category,
         }
+        const isAdded=productCard.filter(el=>el.id===prodact.id)
 
-         setproductCard([...productCard,cartProdact])
+        if(isAdded.length===0){
+            setproductCard([...productCard,cartProdact])
+        }
      }
+
+
+
+
+
+
     return (<div className="App">
         <h1><b>IT-Incubator store</b></h1>
 

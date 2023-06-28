@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 import {ProductsList} from '../ProductCard/ProductList';
 import {ProductsType} from '../../App';
+import {CartItem} from './CartItem';
 
-type CardForProdact = {
+export type CardForProdact = {
     prodactCard: ProductsType[]
 }
 
+
+
+
 export const CardForProdacts: React.FC<CardForProdact> = (props, ...restprops) => {
 
-    const [isOpen, setOpen] = useState(false)
+    const [isOpen, setOpen] = useState(true)
+
 
 
     return (
@@ -17,21 +22,7 @@ export const CardForProdacts: React.FC<CardForProdact> = (props, ...restprops) =
 
                 {isOpen === true ?
                         props.prodactCard.map(el => {
-                            return <div key={el.id} className="products ios apple" id="iphone-x">
-                                <img className="product-image"
-                                     src={el.src}/>
-                                <p className="product-name">{el.title}</p>
-                                <p className="product-description">{el.description}</p>
-                                <div>
-                                    <div>
-                                        <button>-</button>
-                                        <input type="text"/>
-                                        <button>+</button>
-                                    </div>
-                                </div>
-                                <p className="product-price">{el.price}</p>
-                                <button className="add-to-cart" id="test">ADD TO CART</button>
-                            </div>
+                            return <CartItem cartProduct={el} />
                         }):
                     <div>Cart is empty</div>}
 
